@@ -1,12 +1,15 @@
 package com.web.webApp.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-
+@Entity
 
 public class Product {
+    @Id
     private int productId;
     private String productName;
     private int price;
@@ -15,6 +18,10 @@ public class Product {
         this.productId = productId;
         this.productName = productName;
         this.price = price;
+    }
+
+    public Product() {
+
     }
 
     public int getProductId(){
